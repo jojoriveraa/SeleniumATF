@@ -17,7 +17,7 @@ public class LoginTests {
 	@Test
 	public void loginTest() {
 		LoginPage.goTo();
-		LoginPage.loginAs("jrivera").withPassword("JNvqpdG2p4jon24fU#").login();
+		LoginPage.loginAs("atfselenium").withPassword("atfselenium123").login();
 		Assert.assertTrue(DashboardPage.isAt(), "Failed to login");
 	}
 

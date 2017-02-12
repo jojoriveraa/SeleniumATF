@@ -3,7 +3,7 @@ package automation;
 public class LoginPage {
 
 	public static void goTo() {
-		Driver.getInstance().get("http://localhost:2272/wp-login.php");
+		Driver.getInstance().get("https://wordpress.com/settings/general/atfselenium.wordpress.com");
 	}
 
 	public static LoginCommand loginAs(String username) {
