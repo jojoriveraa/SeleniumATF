@@ -21,4 +21,12 @@ public class NewPostPage {
 		Driver.getInstance().findElement(By.className("notice__action")).click();
 	}
 
+	public static boolean isInEditMode() {
+		return Driver.getInstance().findElement(By.className("post-editor")) != null;
+	}
+
+	public static String getTitle() {
+		return Driver.getInstance().findElement(By.className("editor-title")).getText();
+	}
+
 }

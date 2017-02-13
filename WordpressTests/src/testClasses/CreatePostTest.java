@@ -35,7 +35,7 @@ public class CreatePostTest {
 		NewPostPage.goToNewPost();
 
 		Assert.assertEquals(PostPage.getTitle(), title, "Title did not match new post.");
-		
+
 	}
 
 	@AfterClass
