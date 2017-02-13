@@ -2,6 +2,9 @@ package automation;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 public class NewPostPage {
 
@@ -26,6 +29,8 @@ public class NewPostPage {
 	}
 
 	public static String getTitle() {
+		WebDriverWait wdw = new WebDriverWait(Driver.getInstance(), 5);
+		wdw.until(ExpectedConditions.textToBe(By.className("editor-title"), "Sample page"));
 		return Driver.getInstance().findElement(By.className("editor-title")).getText();
 	}
 
