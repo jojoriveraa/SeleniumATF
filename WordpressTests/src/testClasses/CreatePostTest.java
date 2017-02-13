@@ -21,7 +21,7 @@ public class CreatePostTest {
 	}
 
 	@Test
-	public void conCreateABasicPost() {
+	public void createABasicPost() {
 
 		String todayAsString = new SimpleDateFormat("ddMMyyyy").format(new Date());
 		String title = "This is a test post title" + todayAsString;
