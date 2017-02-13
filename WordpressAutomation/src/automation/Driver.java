@@ -24,7 +24,7 @@ public class Driver {
 	}
 
 	public static void close() {
-		Instance.close();
+//		Instance.close();
 	}
 
 }

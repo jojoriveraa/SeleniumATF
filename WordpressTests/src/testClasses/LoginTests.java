@@ -18,6 +18,7 @@ public class LoginTests {
 	public void loginTest() {
 		LoginPage.goTo();
 		LoginPage.loginAs("atfselenium").withPassword("atfselenium123").login();
+		
 		Assert.assertTrue(DashboardPage.isAt(), "Failed to login");
 	}
 
