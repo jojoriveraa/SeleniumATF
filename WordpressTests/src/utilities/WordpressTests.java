@@ -1,10 +1,10 @@
-package testClasses;
+package utilities;
 
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
 import automation.Driver;
-import automation.LoginPage;
+import pages.LoginPage;
 
 public class WordpressTests {
 	@BeforeTest

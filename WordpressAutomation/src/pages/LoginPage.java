@@ -1,4 +1,6 @@
-package automation;
+package pages;
+
+import automation.Driver;
 
 public class LoginPage {
 

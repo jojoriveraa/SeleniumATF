@@ -1,4 +1,4 @@
-package automation;
+package navigation;
 
 public class LeftNavigation {
 	public static class Posts {

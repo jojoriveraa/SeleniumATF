@@ -1,6 +1,8 @@
-package automation;
+package navigation;
 
 import org.openqa.selenium.By;
+
+import automation.Driver;
 
 public class MenuSelector {
 

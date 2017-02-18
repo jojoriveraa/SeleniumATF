@@ -1,4 +1,4 @@
-package automation;
+package pages;
 
 public enum PostType {
 	PAGE

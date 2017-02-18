@@ -1,10 +1,12 @@
-package automation;
+package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import automation.Driver;
+
 public class LoginCommand {
-	
+
 	private String username;
 	private String password;
 

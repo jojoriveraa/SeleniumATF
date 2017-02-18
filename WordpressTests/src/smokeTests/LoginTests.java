@@ -1,9 +1,10 @@
-package testClasses;
+package smokeTests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import automation.DashboardPage;
+import pages.DashboardPage;
+import utilities.WordpressTests;
 
 public class LoginTests extends WordpressTests {
 

@@ -1,7 +1,10 @@
-package automation;
+package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+
+import automation.Driver;
+import navigation.LeftNavigation;
 
 public class ListPostPage {
 
@@ -10,7 +13,6 @@ public class ListPostPage {
 		case PAGE:
 			LeftNavigation.Pages.Allpages.select();
 			break;
-
 		default:
 			break;
 		}

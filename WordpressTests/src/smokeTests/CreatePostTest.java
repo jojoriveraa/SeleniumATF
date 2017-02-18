@@ -1,4 +1,4 @@
-package testClasses;
+package smokeTests;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -6,8 +6,9 @@ import java.util.Date;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import automation.NewPostPage;
-import automation.PostPage;
+import pages.NewPostPage;
+import pages.PostPage;
+import utilities.WordpressTests;
 
 public class CreatePostTest extends WordpressTests {
 

@@ -1,11 +1,12 @@
-package testClasses;
+package smokeTests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import automation.ListPostPage;
-import automation.NewPostPage;
-import automation.PostType;
+import pages.ListPostPage;
+import pages.NewPostPage;
+import pages.PostType;
+import utilities.WordpressTests;
 
 public class PageTest extends WordpressTests {
 

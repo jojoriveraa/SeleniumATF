@@ -1,8 +1,10 @@
-package automation;
+package pages;
 
 import java.util.ArrayList;
 
 import org.openqa.selenium.By;
+
+import automation.Driver;
 
 public class PostPage {
 
