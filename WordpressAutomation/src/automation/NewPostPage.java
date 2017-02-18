@@ -1,17 +1,13 @@
 package automation;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 
 public class NewPostPage {
 
 	public static void goTo() {
-		WebElement postsItem = Driver.getInstance().findElement(By.className("posts"));
-		WebElement addPostButton = postsItem.findElement(By.className("sidebar__button"));
-		addPostButton.click();
+		LeftNavigation.Posts.AddNew.select();
 	}
 
 	public static CreatePostCommand createPost(String title) {

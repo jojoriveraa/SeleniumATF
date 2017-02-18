@@ -8,8 +8,7 @@ public class ListPostPage {
 	public static void goTo(PostType postType) {
 		switch (postType) {
 		case PAGE:
-			WebElement postsItem = Driver.getInstance().findElement(By.className("pages"));
-			postsItem.click();
+			LeftNavigation.Pages.Allpages.select();
 			break;
 
 		default:
