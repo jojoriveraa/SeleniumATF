@@ -8,6 +8,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class Driver {
 
 	private static WebDriver Instance;
+	public static String baseAddress;
 	
 	public static void initialize() {
 		System.setProperty("webdriver.gecko.driver", "res\\drivers\\geckodriver.exe");
@@ -25,6 +26,18 @@ public class Driver {
 
 	public static void close() {
 //		Instance.close();
+	}
+
+	public static String getBaseAddress() {
+		return "https://wordpress.com/";
+	}
+	
+	public static void wait(int seconds){
+		try {
+			Thread.sleep(seconds * 1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 
 }

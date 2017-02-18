@@ -1,29 +1,14 @@
 package testClasses;
 
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import automation.*;
+import automation.DashboardPage;
 
-public class LoginTests {
-	
-	@BeforeClass
-	private void setup() {
-		Driver.initialize();
-	}
+public class LoginTests extends WordpressTests {
 
 	@Test
 	public void loginTest() {
-		LoginPage.goTo();
-		LoginPage.loginAs("atfselenium").withPassword("atfselenium123").login();
-		
 		Assert.assertTrue(DashboardPage.isAt(), "Failed to login");
-	}
-
-	@AfterClass
-	public void cleanup(){
-		Driver.close();
 	}
 }

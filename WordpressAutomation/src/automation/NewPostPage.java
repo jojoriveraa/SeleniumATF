@@ -11,9 +11,7 @@ public class NewPostPage {
 	public static void goTo() {
 		WebElement postsItem = Driver.getInstance().findElement(By.className("posts"));
 		WebElement addPostButton = postsItem.findElement(By.className("sidebar__button"));
-
 		addPostButton.click();
-
 	}
 
 	public static CreatePostCommand createPost(String title) {
