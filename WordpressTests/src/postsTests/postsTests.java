@@ -37,5 +37,29 @@ public class postsTests extends WordpressTests {
 		Assert.assertEquals(ListPostPage.getPreviousPostCount(), ListPostPage.getCurrentPostCount(),
 				"Couldnt trash post");
 	}
+	
+	@Test
+	public void searchPosts() throws NoSuchMethodException, SecurityException, InterruptedException {
+		
+		String title = "Searching posts, title";
+		
+		// create new post
+		NewPostPage.goTo();
+		NewPostPage.createPost(title).withBody("Searching posts, body").publish();
+		DashboardPage.goTo();
+		
+		// Go to lists posts
+		ListPostPage.goTo(PostType.POSTS);
+		
+		// Search fos post
+		ListPostPage.searchForPost(title);
+		
+		// Check that shows up in posts
+		Assert.assertTrue(ListPostPage.doesPostExistsWithTitle(title));
+		
+		// Trash post (cleanup)
+		ListPostPage.trashPostWithTitle(title);
+		
+	}
 
 }

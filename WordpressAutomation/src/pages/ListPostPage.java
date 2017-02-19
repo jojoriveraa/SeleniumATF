@@ -57,11 +57,14 @@ public class ListPostPage {
 		return post != null;
 	}
 
-	public static void trashPostWithTitle(String title) throws InterruptedException, NoSuchMethodException, SecurityException {
+	public static void trashPostWithTitle(String title)
+			throws InterruptedException, NoSuchMethodException, SecurityException {
 		WebElement post = getCardWithTitle(title);
 		WebElement trashIcon = post.findElement(By.className("post-controls__trash"));
 		Method clickMethod = trashIcon.getClass().getDeclaredMethod("click");
-		Driver.noWait(trashIcon, clickMethod); // This no wait was implemented just for academic reasons by now
+		Driver.noWait(trashIcon, clickMethod); // This no wait was implemented
+												// just for academic reasons by
+												// now
 		Driver.wait(5);
 	}
 
@@ -78,6 +81,17 @@ public class ListPostPage {
 		for (WebElement webElement : elementsList) {
 			elementsMap.put(webElement.findElement(By.className("post__title")).getText(), webElement);
 		}
+	}
+
+	public static void searchForPost(String searchString) {
+		WebElement searchContainer = Driver.getInstance().findElement(By.className("is-expanded-to-container"));
+		WebElement searchIcon = searchContainer.findElement(By.className("search__open-icon"));
+		searchIcon.click();
+		Driver.wait(2);
+		WebElement searchBox = Driver.getInstance().findElement(By.xpath("//*[starts-with(@id, 'search-component')]"));
+		searchBox.sendKeys(searchString);
+		Driver.wait(2);
+
 	}
 
 }
