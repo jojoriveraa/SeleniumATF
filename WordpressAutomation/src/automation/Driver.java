@@ -1,5 +1,7 @@
 package automation;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
@@ -13,7 +15,7 @@ public class Driver {
 	public static void initialize() {
 		System.setProperty("webdriver.gecko.driver", "res\\drivers\\geckodriver.exe");
 		Instance = new FirefoxDriver();
-		Instance.manage().timeouts().implicitlyWait(7, TimeUnit.SECONDS);
+		turnOnWait();
 	}
 
 	public static WebDriver getInstance() {
@@ -25,7 +27,7 @@ public class Driver {
 	}
 
 	public static void close() {
-//		Instance.close();
+		Instance.close();
 	}
 
 	public static String getBaseAddress() {
@@ -38,6 +40,26 @@ public class Driver {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+	}
+
+	public static void noWait(Object o, Method method) {
+        turnOffWait();
+        try {
+			method.invoke(o);
+		} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
+			e.printStackTrace();
+		}
+        turnOnWait();
+	}
+
+	private static void turnOnWait() {
+		Instance.manage().timeouts().implicitlyWait(7, TimeUnit.SECONDS);
+		
+	}
+
+	private static void turnOffWait() {
+		Instance.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
+		
 	}
 
 }

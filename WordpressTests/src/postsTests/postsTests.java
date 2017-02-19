@@ -12,7 +12,7 @@ import utilities.WordpressTests;
 public class postsTests extends WordpressTests {
 
 	@Test
-	public void addedPostShowUp() throws InterruptedException {
+	public void addedPostShowUp() throws InterruptedException, NoSuchMethodException, SecurityException {
 		String title = "Added post show up, title";
 
 		// Go to posts, get posts count, store

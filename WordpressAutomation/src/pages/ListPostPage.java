@@ -1,5 +1,6 @@
 package pages;
 
+import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -56,9 +57,11 @@ public class ListPostPage {
 		return post != null;
 	}
 
-	public static void trashPostWithTitle(String title) throws InterruptedException {
+	public static void trashPostWithTitle(String title) throws InterruptedException, NoSuchMethodException, SecurityException {
 		WebElement post = getCardWithTitle(title);
-		post.findElement(By.className("post-controls__trash")).click();
+		WebElement trashIcon = post.findElement(By.className("post-controls__trash"));
+		Method clickMethod = trashIcon.getClass().getDeclaredMethod("click");
+		Driver.noWait(trashIcon, clickMethod); // This no wait was implemented just for academic reasons by now
 		Driver.wait(5);
 	}
 
