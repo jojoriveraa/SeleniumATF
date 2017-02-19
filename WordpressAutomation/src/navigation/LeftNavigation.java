@@ -6,7 +6,11 @@ public class LeftNavigation {
 			public static void select() {
 				MenuSelector.select("posts", "sidebar__button");
 			}
-
+		}
+		public static class AllPosts {
+			public static void select() {
+				MenuSelector.select("posts");
+			}
 		}
 	}
 

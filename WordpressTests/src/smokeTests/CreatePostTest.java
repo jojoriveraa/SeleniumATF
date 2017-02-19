@@ -13,7 +13,7 @@ import utilities.WordpressTests;
 public class CreatePostTest extends WordpressTests {
 
 	@Test
-	public void createABasicPost() {
+	public void createABasicPost() throws InterruptedException {
 
 		String todayAsString = new SimpleDateFormat("ddMMyyyy").format(new Date());
 		String title = "This is a test post title" + todayAsString;

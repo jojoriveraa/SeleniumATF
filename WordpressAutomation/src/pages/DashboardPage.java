@@ -12,4 +12,7 @@ public class DashboardPage {
 		return wdw.until(ExpectedConditions.titleContains("Site Settings"));
 	}
 
+	public static void goTo() {
+		LoginPage.goTo();
+	}
 }

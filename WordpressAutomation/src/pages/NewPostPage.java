@@ -31,4 +31,9 @@ public class NewPostPage {
 		return Driver.getInstance().findElement(By.className("editor-title")).getText();
 	}
 
+	public static void goBack() {
+		Driver.getInstance().findElement(By.className("editor-ground-control__publish-combo")).click();
+		Driver.getInstance().findElement(By.className("editor-sidebar__close")).click();
+	}
+
 }

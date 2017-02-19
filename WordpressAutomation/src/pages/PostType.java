@@ -1,5 +1,5 @@
 package pages;
 
 public enum PostType {
-	PAGE
+	PAGE, POSTS
 }

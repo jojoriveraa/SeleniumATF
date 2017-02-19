@@ -1,7 +1,6 @@
 package pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
 import automation.Driver;
 
@@ -21,17 +20,15 @@ public class CreatePostCommand {
 
 	public void publish() {
 		Driver.getInstance().findElement(By.className("editor-title__input")).sendKeys(title);
+		Driver.wait(5);
 
 		Driver.getInstance().switchTo().frame("tinymce-1_ifr");
-		Driver.getInstance().switchTo().activeElement().sendKeys(body);
-
+		Driver.getInstance().findElement(By.id("tinymce")).sendKeys(body);
 		Driver.getInstance().switchTo().defaultContent();
+		Driver.wait(5);
 
-		WebElement publishControl = Driver.getInstance()
-				.findElement(By.className("editor-ground-control__action-buttons"));
-		WebElement publishButton = publishControl.findElement(By.className("editor-publish-button"));
-
-		publishButton.click();
+		Driver.getInstance().findElement(By.className("editor-ground-control__publish-combo")).click();
+		Driver.wait(5);
 
 	}
 }
