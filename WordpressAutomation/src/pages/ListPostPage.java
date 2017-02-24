@@ -7,6 +7,8 @@ import java.util.Map;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import automation.Driver;
 import navigation.LeftNavigation;
@@ -35,8 +37,10 @@ public class ListPostPage {
 	}
 
 	public static void storeCount() {
+		goTo();
 		lastCount = getPostCount();
 	}
+
 
 	private static int getPostCount() {
 		String countText = Driver.getInstance().findElement(By.className("is-publish"))
@@ -45,10 +49,12 @@ public class ListPostPage {
 	}
 
 	public static int getPreviousPostCount() {
+		goTo();
 		return lastCount;
 	}
 
 	public static Object getCurrentPostCount() {
+		goTo();
 		return getPostCount();
 	}
 
@@ -62,7 +68,7 @@ public class ListPostPage {
 		WebElement post = getCardWithTitle(title);
 		WebElement trashIcon = post.findElement(By.className("post-controls__trash"));
 		Method clickMethod = trashIcon.getClass().getDeclaredMethod("click");
-		Driver.noWait(trashIcon, clickMethod); // This no wait was implemented
+		Driver.noWait(trashIcon, clickMethod); // This 'no wait' was implemented
 												// just for academic reasons by
 												// now
 		Driver.wait(5);
@@ -84,6 +90,7 @@ public class ListPostPage {
 	}
 
 	public static void searchForPost(String searchString) {
+		goTo();
 		WebElement searchContainer = Driver.getInstance().findElement(By.className("is-expanded-to-container"));
 		WebElement searchIcon = searchContainer.findElement(By.className("search__open-icon"));
 		searchIcon.click();
@@ -94,4 +101,13 @@ public class ListPostPage {
 
 	}
 
+	private static boolean isAt() {
+		return Driver.getInstance().getTitle().toLowerCase().contains("Blog Posts");
+	}
+
+	public static void goTo() {
+		if (!isAt()) {
+			ListPostPage.goTo(PostType.POSTS);
+		}
+	}
 }
